@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ProjektXamarin.Views.ProfilePage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ProjektXamarin.Views.ProfilePage" xmlns:vm="clr-namespace:InsuranceApp.ViewModels">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Edit" Clicked="Handle_Clicked" />
     </ContentPage.ToolbarItems>
-    <ContentPage.Content>
-    </ContentPage.Content>
+    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+        <Label Text="{Binding Customer FirstName}"/>
+    </StackLayout>
 </ContentPage>

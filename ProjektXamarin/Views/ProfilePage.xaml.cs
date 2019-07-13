@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using ProjektXamarin.ViewModels;
 using Xamarin.Forms;
 
 namespace ProjektXamarin.Views
@@ -10,6 +10,8 @@ namespace ProjektXamarin.Views
         public ProfilePage()
         {
             InitializeComponent();
+
+            this.BindingContext = new ProfilePageModel();
         }
 
         void Handle_Clicked(object sender, System.EventArgs e)
