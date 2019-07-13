@@ -13,8 +13,8 @@ namespace ProjektXamarin.Services
         {
             var cus = new Customer
             {
-                FirstName = "Empty",
-                LastName = "Empty"
+                FirstName = "Empty_F",
+                LastName = "Empty_L"
 
             };
             return cus;

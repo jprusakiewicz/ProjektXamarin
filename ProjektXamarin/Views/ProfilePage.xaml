@@ -4,6 +4,9 @@
         <ToolbarItem Text="Edit" Clicked="Handle_Clicked" />
     </ContentPage.ToolbarItems>
     <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
-        <Label Text="{Binding Customer FirstName}"/>
+        <Label Text="First Name:"/>
+        <Label Text="{Binding Customer.FirstName}"/>
+        <Label Text="Second Name:"/>
+        <Label Text="{Binding Customer.LastName}"/>
     </StackLayout>
 </ContentPage>
