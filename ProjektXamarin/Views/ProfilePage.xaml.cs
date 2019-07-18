@@ -10,7 +10,6 @@ namespace ProjektXamarin.Views
         public ProfilePage()
         {
             InitializeComponent();
-
             this.BindingContext = new ProfilePageModel();
         }
 

@@ -15,8 +15,12 @@ namespace ProjektXamarin.ViewModels
         private Customer _customer;
         public Customer Customer
         {
-           get { return _customer; }
+            get { return _customer; }
             set { SetProperty(ref _customer, value); }
+        }
+        public string DisplayMessage
+        {
+            get { return $"Last Name: {Customer.LastName}"; }
         }
     }
 }
