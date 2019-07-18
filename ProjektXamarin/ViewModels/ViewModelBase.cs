@@ -19,7 +19,7 @@ namespace ProjektXamarin.ViewModels
         protected void OnPropertyChanged(string propertyName)
         {
             Console.WriteLine(propertyName);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName)); //tu jest błąd
         }
     }
 }

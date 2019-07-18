@@ -8,8 +8,10 @@
         <Label Text="{Binding Customer.FirstName}"/> 
         <Label Text="Second Name:"/>
         <Label Text="{Binding Customer.LastName}"/>
+        <Entry Text="{Binding Customer.FirstName, Mode=TwoWay}"/>
         <Entry Text="{Binding Customer.LastName, Mode=TwoWay}"/>
         <Label Text="{Binding DisplayMessage}"/>
-        
+        <Button Text="Save" Command="{Binding SaveCommand}"></Button>  
+        <Label Text="{Binding Message}"/>
     </StackLayout>
 </ContentPage>
