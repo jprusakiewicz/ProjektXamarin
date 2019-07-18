@@ -5,8 +5,10 @@
     </ContentPage.ToolbarItems>
     <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
         <Label Text="First Name:"/>
-        <Label Text="{Binding Customer.FirstName}"/>
+        <Label Text="{Binding Customer.FirstName}"/> 
         <Label Text="Second Name:"/>
         <Label Text="{Binding Customer.LastName}"/>
+        <Entry Text="{Binding Customer.LastName, Mode=TwoWay}"/>
+        
     </StackLayout>
 </ContentPage>
