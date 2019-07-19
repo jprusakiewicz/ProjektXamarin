@@ -21,6 +21,16 @@
                 </x:Array>
               </Picker.ItemsSource>
         </Picker>
+        <Label Text=" MarialStatus"/>
+        <Picker Title="Select Marial Status" SelectedItem="{Binding Customer.MarialStatus, Mode=TwoWay}">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                     <x:String>Single</x:String>
+                <x:String>Married</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+            <Label Text="Adress:" FontSize="Medium" />
         <Button Text="Save" Command="{Binding SaveCommand}" Clicked="Clicked"></Button> 
     </StackLayout>
 </ContentPage>

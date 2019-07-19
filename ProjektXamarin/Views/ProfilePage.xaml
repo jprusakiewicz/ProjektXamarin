@@ -12,5 +12,7 @@
         <Label Text="{Binding Customer.Age}"/>
         <Label Text="Education:"/>
         <Label Text="{Binding Customer.Education}"/>
+        <Label Text="Marial status:"/>
+        <Label Text="{Binding Customer.MarialStatus}"/>
     </StackLayout>
 </ContentPage>

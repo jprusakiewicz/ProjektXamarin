@@ -8,5 +8,6 @@ namespace ProjektXamarin.Models
         //public enum Education { none, a, b, c } {get; set;}
         public int Age { get; set; }
         public string Education { get; set; }
+        public string MarialStatus { get; set; }
     }
 }
