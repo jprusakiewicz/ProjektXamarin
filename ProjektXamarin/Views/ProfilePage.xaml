@@ -1,18 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ProjektXamarin.Views.ProfilePage" xmlns:vm="clr-namespace:InsuranceApp.ViewModels">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Edit" Clicked="Handle_Clicked" />
+        <ToolbarItem Text="Edit" Clicked="EditProfile_Clicked" />
     </ContentPage.ToolbarItems>
     <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
         <Label Text="First Name:"/>
         <Label Text="{Binding Customer.FirstName}"/> 
         <Label Text="Second Name:"/>
         <Label Text="{Binding Customer.LastName}"/>
-        <Entry Text="{Binding Customer.FirstName, Mode=TwoWay}"/>
-        <Entry Text="{Binding Customer.LastName, Mode=TwoWay}"/>
-        <Entry Text="{Binding DisplayMessage, Mode=TwoWay}"/>
-        <Label Text="{Binding DisplayMessage, Mode=TwoWay}"/>
-        <Button Text="Save" Command="{Binding SaveCommand}"></Button>  
         <Label Text="{Binding Message}"/>
     </StackLayout>
 </ContentPage>

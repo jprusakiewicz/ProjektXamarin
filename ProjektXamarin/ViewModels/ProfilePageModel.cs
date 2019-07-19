@@ -41,8 +41,8 @@ namespace ProjektXamarin.ViewModels
             get
             {
                 return new Command(() => {
-                     Message = "I am " + Customer.FirstName + ", My Name is " + Customer.LastName;
                     this.Customer = Customer;
+                    OnPropertyChanged(nameof(Customer));
                 });
             }
         }

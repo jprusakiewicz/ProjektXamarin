@@ -7,15 +7,17 @@ namespace ProjektXamarin.Views
 {
     public partial class ProfilePage : ContentPage
     {
+        ProfilePageModel prof;
         public ProfilePage()
         {
             InitializeComponent();
-            this.BindingContext = new ProfilePageModel();
+            prof = new ProfilePageModel();
+            this.BindingContext = prof;
         }
 
-        void Handle_Clicked(object sender, System.EventArgs e)
+        async void EditProfile_Clicked(object sender, System.EventArgs e)
         {
-            throw new NotImplementedException();
+            await Navigation.PushModalAsync(new NavigationPage(new ProfileEditPage(prof)));
         }
     }
 }
