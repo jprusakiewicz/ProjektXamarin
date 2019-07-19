@@ -10,7 +10,8 @@
         <Label Text="{Binding Customer.LastName}"/>
         <Entry Text="{Binding Customer.FirstName, Mode=TwoWay}"/>
         <Entry Text="{Binding Customer.LastName, Mode=TwoWay}"/>
-        <Label Text="{Binding DisplayMessage}"/>
+        <Entry Text="{Binding DisplayMessage, Mode=TwoWay}"/>
+        <Label Text="{Binding DisplayMessage, Mode=TwoWay}"/>
         <Button Text="Save" Command="{Binding SaveCommand}"></Button>  
         <Label Text="{Binding Message}"/>
     </StackLayout>

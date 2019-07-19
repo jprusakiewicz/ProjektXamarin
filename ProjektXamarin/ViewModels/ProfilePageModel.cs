@@ -1,35 +1,24 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using ProjektXamarin.Models;
 using ProjektXamarin.Services;
 using Xamarin.Forms;
 
 namespace ProjektXamarin.ViewModels
 {
-    public class ProfilePageModel : INotifyPropertyChanged
+    public class ProfilePageModel : ViewModelBase
     {
         public ProfilePageModel()
         {
-            //var service = new CustomerServices();
-            //Customer = service.GetCustomer();
-            Customer = new Customer()
-            {
-                FirstName = "ABC",
-                LastName = "DEF"
-            };
+            var service = new CustomerServices();
+            Customer = service.GetCustomer();
+
         }
 
         private Customer _customer;
         public Customer Customer
         {
             get { return _customer; }
-            //set { SetProperty(ref _customer, value); }
-            set
-            {
-                _customer = value;
-                OnPropertyChanged();
-            }
+            set { SetProperty(ref _customer, value); }
         }
         public string DisplayMessage
         {
@@ -44,14 +33,8 @@ namespace ProjektXamarin.ViewModels
             }
             set
             {
-                _message = value;
-                OnPropertyChanged();
+                SetProperty(ref _message, value);
             }
-        }
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         public Command SaveCommand
         {
