@@ -8,6 +8,9 @@
         <Label Text="{Binding Customer.FirstName}"/> 
         <Label Text="Second Name:"/>
         <Label Text="{Binding Customer.LastName}"/>
-        <Label Text="{Binding Message}"/>
+        <Label Text="Age:"/>
+        <Label Text="{Binding Customer.Age}"/>
+        <Label Text="Education:"/>
+        <Label Text="{Binding Customer.Education}"/>
     </StackLayout>
 </ContentPage>

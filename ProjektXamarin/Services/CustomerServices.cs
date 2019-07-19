@@ -1,6 +1,5 @@
 ﻿using System;
 using ProjektXamarin.Models;
-
 namespace ProjektXamarin.Services
 {
     public class CustomerServices
@@ -13,9 +12,10 @@ namespace ProjektXamarin.Services
         {
             var cus = new Customer
             {
-                FirstName = "Empty_F",
-                LastName = "Empty_L"
-
+                FirstName = null,
+                Age = 0,
+                LastName = null,
+                Education = null
             };
             return cus;
         }

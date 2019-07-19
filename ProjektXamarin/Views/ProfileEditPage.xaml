@@ -8,6 +8,19 @@
         <Entry Text="{Binding Customer.FirstName, Mode=TwoWay}"/>
         <Label Text="Last Name"/>
         <Entry Text="{Binding Customer.LastName, Mode=TwoWay}"/>
+        <Label Text="Age"/>
+        <Entry Text="{Binding Customer.Age, Mode=TwoWay}"/>
+        <Label Text="Education"/>
+        <Picker Title="Select Education" SelectedItem="{Binding Customer.Education, Mode=TwoWay}">
+              <Picker.ItemsSource>
+                 <x:Array Type="{x:Type x:String}">
+                 <x:String>Primary</x:String>
+                <x:String>Secondary </x:String>
+                <x:String>Mid</x:String>
+                <x:String>High</x:String>
+                </x:Array>
+              </Picker.ItemsSource>
+        </Picker>
         <Button Text="Save" Command="{Binding SaveCommand}" Clicked="Clicked"></Button> 
     </StackLayout>
 </ContentPage>
