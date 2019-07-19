@@ -30,7 +30,8 @@
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
-            <Label Text="Adress:" FontSize="Medium" />
+            <Label Text="Adress" FontSize="Medium" />
+            <Entry Text="{Binding Customer.Adress, Mode=TwoWay}"/>
         <Button Text="Save" Command="{Binding SaveCommand}" Clicked="Clicked"></Button> 
     </StackLayout>
 </ContentPage>

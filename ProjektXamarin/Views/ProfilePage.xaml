@@ -14,5 +14,7 @@
         <Label Text="{Binding Customer.Education}"/>
         <Label Text="Marial status:"/>
         <Label Text="{Binding Customer.MarialStatus}"/>
+        <Label Text="Adress:"/>
+        <Label Text="{Binding Customer.Adress}"/>
     </StackLayout>
 </ContentPage>

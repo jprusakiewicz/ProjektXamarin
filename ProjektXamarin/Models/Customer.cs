@@ -9,5 +9,6 @@ namespace ProjektXamarin.Models
         public int Age { get; set; }
         public string Education { get; set; }
         public string MarialStatus { get; set; }
+        public string Adress { get; set; }
     }
 }

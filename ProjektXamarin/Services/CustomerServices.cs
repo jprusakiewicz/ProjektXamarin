@@ -16,7 +16,8 @@ namespace ProjektXamarin.Services
                 Age = 0,
                 LastName = null,
                 Education = null,
-                MarialStatus = null
+                MarialStatus = null,
+                Adress = null
             };
             return cus;
         }
