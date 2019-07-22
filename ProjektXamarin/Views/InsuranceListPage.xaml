@@ -15,8 +15,9 @@
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Padding="10">
+                            <!--<Label Text="{Binding  Id}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />-->
                             <Label Text="{Binding Type}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
-                            <Label Text="{Binding Prize}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
+                            <Label Text="{Binding Duration, StringFormat='Duration: {0} days'}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

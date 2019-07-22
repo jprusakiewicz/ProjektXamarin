@@ -8,6 +8,7 @@ namespace ProjektXamarin.Views
     public partial class NewInsurancePage : ContentPage
     {
         public Insurance Item { get; set; }
+        string msg = "here";
 
         public NewInsurancePage()
         {
@@ -15,8 +16,9 @@ namespace ProjektXamarin.Views
 
             Item = new Insurance
             {
-                Type = "Car",
-                Prize = 5,
+                Id = Guid.NewGuid().ToString(),
+                Type = "",
+                Prize = 0,
                 Duration = 10
             };
             BindingContext = this;
@@ -30,6 +32,13 @@ namespace ProjektXamarin.Views
         async void Cancel_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync();
+        }
+
+        void Handle_ValueChanged(object sender, Xamarin.Forms.ValueChangedEventArgs e)
+        {
+            msg = String.Format("Current value: {0} days", Convert.ToInt32(e.NewValue));
+            Item.Duration = Convert.ToInt32(e.NewValue);
+            this.text1.Text = msg;
         }
     }
 }
