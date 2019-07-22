@@ -3,6 +3,24 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="Handle_Clicked"/>
     </ContentPage.ToolbarItems>
-    <ContentPage.Content>
-    </ContentPage.Content>
+    <StackLayout>
+        <ListView x:Name="ItemsListView" ItemsSource="{Binding Items}" RefreshCommand="{Binding LoadItemsCommand}" IsPullToRefreshEnabled="true" IsRefreshing="{Binding IsBusy, Mode=OneWay}" CachingStrategy="RecycleElement" ItemSelected="OnItemSelected" VerticalOptions="FillAndExpand" HasUnevenRows="true">
+<!--            <ListView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>First Item</x:String>
+                    <x:String>Second Item</x:String>
+                </x:Array>
+            </ListView.ItemsSource>-->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding Type}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
+                            <Label Text="{Binding Prize}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>
