@@ -8,10 +8,12 @@ namespace ProjektXamarin.ViewModels
     {
         public InsuranceDetailViewModel(Insurance item)
         {
+            Insurance insurance = item;
             Content = new StackLayout
             {
                 Children = {
-                    new Label { Text = "Hello ContentPage" }
+                    new Label { Text = "Your Insurance", BindingContext = item }
+                    
                 }
             };
         }

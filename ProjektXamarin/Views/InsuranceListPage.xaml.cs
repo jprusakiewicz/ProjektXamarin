@@ -23,8 +23,8 @@ namespace ProjektXamarin.Views
             if (item == null)
                 return;
 
-            await Navigation.PushAsync(new InsuranceDetailPage(new InsuranceDetailViewModel(item)));
-
+            //await Navigation.PushAsync(new InsuranceDetailPage(new InsuranceDetailViewModel(item)));
+            await Navigation.PushAsync(new InsuranceDetailPage(item));
             // Manually deselect item.
             ItemsListView.SelectedItem = null;
         }
