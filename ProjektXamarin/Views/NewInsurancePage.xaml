@@ -9,23 +9,71 @@
             <Label Text="ID" FontSize="Medium" />
             <Label Text="{Binding Item.Id}" FontSize="Small" />
             <Label Text="Type" FontSize="Medium" />
-            <Picker Title="Select Insurance Type" SelectedItem="{Binding Item.Type, Mode=TwoWay}">
+            <Picker Title="Select Insurance Type" SelectedItem="{Binding Item.Type, Mode=TwoWay}" SelectedIndexChanged="Handle_SelectedIndexChanged">
               <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                  <x:String>Car</x:String>
                  <x:String>Property</x:String>
                  <x:String>Trip</x:String>
-                 <x:String>Life</x:String>
-                 <x:String>Phone</x:String>
                 </x:Array>
               </Picker.ItemsSource>
             </Picker>
-            <Label Text="Prize" FontSize="Medium" />
-            <Entry Text="{Binding Item.Prize}" FontSize="Small" />
-            <Label Text="Duration" FontSize="Medium" />
-            <Label Text="{Binding Item.Duration}" Margin="0,25,0,0"/>
             <Label x:Name="text1" Text="Insurance duration:" Margin="0,0,0,5"/>
             <Slider Maximum="730" Minimum="1" ValueChanged="Handle_ValueChanged" />
+            <StackLayout x:Name='CarEntry' IsVisible="false">
+                <Label  Text="Make" FontSize="Medium"  />
+                <Entry  Text="{Binding Item.Make}" FontSize="Small" />
+                <Label  Text="Model" FontSize="Medium"  />
+                <Entry  Text="{Binding Item.Model}" FontSize="Small" />
+                <Label  Text="Year" FontSize="Medium"  />
+                <Entry  Text="{Binding Item.Year}" FontSize="Small" />
+                <Label  Text="Color" FontSize="Medium"  />
+                <Picker  SelectedItem="{Binding Item.Color, Mode=TwoWay}" >
+                 <Picker.ItemsSource>
+                  <x:Array Type="{x:Type x:String}">
+                   <x:String>Black</x:String>
+                   <x:String>Blue</x:String>
+                   <x:String>Brown</x:String>
+                   <x:String>Red</x:String>
+                   <x:String>Green</x:String>
+                   <x:String>Grey</x:String>
+                   <x:String>Orange</x:String>
+                   <x:String>Yellow</x:String>
+                   <x:String>White</x:String>
+                   <x:String>Purple</x:String>                      
+                  </x:Array>
+                 </Picker.ItemsSource>
+                </Picker>
+            </StackLayout>
+            <StackLayout x:Name='PropertyEntry' IsVisible="false"> 
+                <Label  Text="PropertyType" FontSize="Medium"  />
+                <Picker SelectedItem="{Binding Item.PropertyType, Mode=TwoWay}">
+                 <Picker.ItemsSource>
+                   <x:Array Type="{x:Type x:String}">
+                   <x:String>Flat</x:String>
+                   <x:String>House</x:String> 
+                   </x:Array>
+                  </Picker.ItemsSource>
+                </Picker>
+                <Label  Text="Property Size" FontSize="Medium"  />
+                <Entry  Text="{Binding Item.PropertySize}" FontSize="Small" />
+            </StackLayout>
+            <StackLayout x:Name='TripEntry' IsVisible="false"> 
+                <Label  Text="Destination" FontSize="Medium"  />
+                <Picker  SelectedItem="{Binding Item.Destination, Mode=TwoWay}" FontSize="Small">
+                  <Picker.ItemsSource>
+                   <x:Array Type="{x:Type x:String}">
+                   <x:String>Europe</x:String>
+                   <x:String>Asia</x:String>
+                   <x:String>Africa</x:String>
+                   <x:String>North America</x:String>
+                   <x:String>South America</x:String>
+                   <x:String>Australia</x:String>                  
+                  </x:Array>
+                 </Picker.ItemsSource>
+                </Picker>
+            </StackLayout>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

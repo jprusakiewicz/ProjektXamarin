@@ -8,7 +8,8 @@ namespace ProjektXamarin.Views
     public partial class NewInsurancePage : ContentPage
     {
         public Insurance Item { get; set; }
-        string msg = "here";
+        string msg;
+        bool bom = false;
 
         public NewInsurancePage()
         {
@@ -34,11 +35,39 @@ namespace ProjektXamarin.Views
             await Navigation.PopModalAsync();
         }
 
-        void Handle_ValueChanged(object sender, Xamarin.Forms.ValueChangedEventArgs e)
+        void Handle_ValueChanged(object sender, Xamarin.Forms.ValueChangedEventArgs e) //slider
         {
             msg = String.Format("Current value: {0} days", Convert.ToInt32(e.NewValue));
             Item.Duration = Convert.ToInt32(e.NewValue);
             this.text1.Text = msg;
+        }
+
+        //void PickerChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e) //picker
+        //{
+        //    // Console.WriteLine(Item.Duration);
+        //    C
+        //    //if(sender.Equals)
+        //    ColorEntry.IsVisible = true;
+        //}
+
+        void Handle_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            CarEntry.IsVisible = false;
+            PropertyEntry.IsVisible = false;
+            TripEntry.IsVisible = false;
+
+            if (Item.Type == "Car")
+            {
+                CarEntry.IsVisible = true;
+            }
+            if (Item.Type == "Property")
+            {
+                PropertyEntry.IsVisible = true;
+            }
+            if (Item.Type == "Trip")
+            {
+                TripEntry.IsVisible = true;
+            }
         }
     }
 }
