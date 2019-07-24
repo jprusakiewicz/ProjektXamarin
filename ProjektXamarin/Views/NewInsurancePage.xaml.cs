@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ProjektXamarin.Models;
+using ProjektXamarin.Services;
 using Xamarin.Forms;
 
 namespace ProjektXamarin.Views
@@ -9,12 +10,12 @@ namespace ProjektXamarin.Views
     {
         public Insurance Item { get; set; }
         string msg;
-        bool bom = false;
+        CountInsuranceService service;
 
         public NewInsurancePage()
         {
             InitializeComponent();
-
+            service = new CountInsuranceService();
             Item = new Insurance
             {
                 Id = Guid.NewGuid().ToString(),
@@ -26,7 +27,9 @@ namespace ProjektXamarin.Views
         }
         async void Save_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "AddItem", Item);
+            //tu się podłączyć do serwisu
+            //MessagingCenter.Send(this, "AddItem", Item); //albo tu
+            MessagingCenter.Send(this, "AddItem", service.CountInsurance(Item));
             await Navigation.PopModalAsync();
         }
 
@@ -41,14 +44,6 @@ namespace ProjektXamarin.Views
             Item.Duration = Convert.ToInt32(e.NewValue);
             this.text1.Text = msg;
         }
-
-        //void PickerChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e) //picker
-        //{
-        //    // Console.WriteLine(Item.Duration);
-        //    C
-        //    //if(sender.Equals)
-        //    ColorEntry.IsVisible = true;
-        //}
 
         void Handle_SelectedIndexChanged(object sender, System.EventArgs e)
         {
