@@ -5,7 +5,7 @@
     </ContentPage.ToolbarItems>
     <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
         <Label Text="First Name"/>
-        <Entry Text="{Binding Customer.FirstName, Mode=TwoWay}"/>
+        <Entry Text="{Binding Customer.FirstName}"/>
         <Label Text="Last Name"/>
         <Entry Text="{Binding Customer.LastName, Mode=TwoWay}"/>
         <Label Text="Age"/>
@@ -32,6 +32,6 @@
         </Picker>
             <Label Text="Adress" FontSize="Medium" />
             <Entry Text="{Binding Customer.Adress, Mode=TwoWay}"/>
-        <Button Text="Save" Command="{Binding SaveCommand}" Clicked="Clicked"></Button> 
+            <Button Text="Save" Command="{Binding SaveCommand}" Clicked="Clicked"></Button> 
     </StackLayout>
 </ContentPage>

@@ -10,6 +10,9 @@
         <Label Text="{Binding Prize}" FontSize="Small" />
         <Label Text="Duration" FontSize="Medium" />
         <Label Text="{Binding Duration}"/>
+        <Label Text="Owner" FontSize="Medium" />
+        <Label Text="{Binding owner.FirstName}"/>
+        <Label Text="{Binding owner.Age}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

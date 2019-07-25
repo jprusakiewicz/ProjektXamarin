@@ -12,6 +12,7 @@ namespace ProjektXamarin.ViewModels
     {
         public ObservableCollection<Insurance> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
+        public Customer customer;
         public InsuranceListViewModel()
         {
             // Title = "Browse";
@@ -23,11 +24,15 @@ namespace ProjektXamarin.ViewModels
                 Items.Add(newItem);
                 await DataStore.AddItemAsync(newItem);
             });
+            MessagingCenter.Subscribe<ProfilePageModel, Customer>(this, "ProfileUpdated", async (obj, _cus)=>
+            {
+                customer = _cus;
+            });
+        
         }
 
         async Task ExecuteLoadItemsCommand()
         {
-            Debug.WriteLine("stan: " + IsBusy);
             if (IsBusy)
                 return;
 

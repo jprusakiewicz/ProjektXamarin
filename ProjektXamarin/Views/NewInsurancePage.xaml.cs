@@ -12,7 +12,7 @@ namespace ProjektXamarin.Views
         string msg;
         CountInsuranceService service;
 
-        public NewInsurancePage()
+        public NewInsurancePage(Customer customer)
         {
             InitializeComponent();
             service = new CountInsuranceService();
@@ -21,9 +21,23 @@ namespace ProjektXamarin.Views
                 Id = Guid.NewGuid().ToString(),
                 Type = "",
                 Prize = 0,
-                Duration = 10
+                Duration = 10,
+               // owner = customer 
             };
             BindingContext = this;
+            if (Item.owner == null)
+            {
+                Item.owner = new Customer();
+                Item.owner.FirstName = customer.FirstName;
+                Item.owner.LastName = customer.LastName;
+                Item.owner.Adress = customer.Adress;
+                Item.owner.Age = customer.Age;
+                Item.owner.Education = customer.Education;
+                Item.owner.MarialStatus = customer.MarialStatus;
+            }
+                
+            
+
         }
         async void Save_Clicked(object sender, EventArgs e)
         {

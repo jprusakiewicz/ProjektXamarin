@@ -20,5 +20,7 @@ namespace ProjektXamarin.Models
 
         //Trip
         public string Destination { get; set; }
+
+        public Customer owner { get; set; }
     }
 }

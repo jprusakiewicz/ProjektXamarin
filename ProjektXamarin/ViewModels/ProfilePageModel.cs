@@ -36,6 +36,7 @@ namespace ProjektXamarin.ViewModels
                 SetProperty(ref _message, value);
             }
         }
+
         public Command SaveCommand
         {
             get
@@ -43,6 +44,7 @@ namespace ProjektXamarin.ViewModels
                 return new Command(() => {
                     this.Customer = Customer;
                     OnPropertyChanged(nameof(Customer));
+                    MessagingCenter.Send(this, "ProfileUpdated",Customer);
                 });
             }
         }

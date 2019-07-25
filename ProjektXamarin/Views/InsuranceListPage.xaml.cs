@@ -30,7 +30,7 @@ namespace ProjektXamarin.Views
         }
         async void Handle_Clicked(object sender, System.EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new NewInsurancePage()));
+            await Navigation.PushModalAsync(new NavigationPage(new NewInsurancePage(viewModel.customer)));
         }
         protected override void OnAppearing()
         {

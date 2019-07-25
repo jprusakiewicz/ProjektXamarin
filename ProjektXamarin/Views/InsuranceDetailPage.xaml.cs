@@ -12,6 +12,8 @@ namespace ProjektXamarin.Views
         {
             InitializeComponent();
             this.BindingContext = Item ?? throw new System.ArgumentException("pusto byku");
+            if(Item.owner!= null)
+            Console.WriteLine(Item.owner.FirstName);
         }
     }
 }
