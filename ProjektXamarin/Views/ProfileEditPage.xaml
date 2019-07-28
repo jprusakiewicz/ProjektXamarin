@@ -4,6 +4,8 @@
         <ToolbarItem Text="Cancel" Clicked="Clicked"/>
     </ContentPage.ToolbarItems>
     <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+        <Image Margin="0,0,0,10" x:Name="imgSelected" HeightRequest="150" Source="{Binding Customer.ProfilePhoto, Mode=TwoWay}"> </Image>
+        <Button x:Name="PickBtn" Text="Pick" Clicked="Handle_Clicked" />
         <Label Text="First Name"/>
         <Entry Text="{Binding Customer.FirstName}"/>
         <Label Text="Last Name"/>

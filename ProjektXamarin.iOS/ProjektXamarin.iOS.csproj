@@ -134,4 +134,7 @@
       <Name>ProjektXamarin</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DefaultPortrait.png" />
+  </ItemGroup>
 </Project>

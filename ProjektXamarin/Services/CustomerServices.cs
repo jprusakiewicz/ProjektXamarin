@@ -1,11 +1,17 @@
 ﻿using System;
+using System.IO;
+using Plugin.Media.Abstractions;
 using ProjektXamarin.Models;
+using Xamarin.Forms;
+
 namespace ProjektXamarin.Services
 {
     public class CustomerServices
     {
+        
         public CustomerServices()
         {
+           
         }
 
         public Customer GetCustomer()
@@ -17,7 +23,8 @@ namespace ProjektXamarin.Services
                 LastName = null,
                 Education = null,
                 MarialStatus = null,
-                Adress = null
+                Adress = null,
+                ProfilePhoto = "DefaultPortrait.png"
             };
             return cus;
         }

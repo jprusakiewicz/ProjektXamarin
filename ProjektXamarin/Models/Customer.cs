@@ -1,4 +1,6 @@
 ﻿using System;
+using Xamarin.Forms;
+
 namespace ProjektXamarin.Models
 {
     public class Customer
@@ -10,5 +12,7 @@ namespace ProjektXamarin.Models
         public string Education { get; set; }
         public string MarialStatus { get; set; }
         public string Adress { get; set; }
+        public ImageSource ProfilePhoto { get; set; }
+
     }
 }

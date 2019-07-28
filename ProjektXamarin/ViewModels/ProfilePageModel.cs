@@ -48,5 +48,6 @@ namespace ProjektXamarin.ViewModels
                 });
             }
         }
+
     }
 }
