@@ -5,15 +5,12 @@
     </ContentPage.ToolbarItems>
     <StackLayout>
         <ListView x:Name="ItemsListView" ItemsSource="{Binding Items}" RefreshCommand="{Binding LoadItemsCommand}" IsPullToRefreshEnabled="true" IsRefreshing="{Binding IsBusy, Mode=OneWay}" CachingStrategy="RecycleElement" ItemSelected="OnItemSelected" VerticalOptions="FillAndExpand" HasUnevenRows="true">
-<!--            <ListView.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>First Item</x:String>
-                    <x:String>Second Item</x:String>
-                </x:Array>
-            </ListView.ItemsSource>-->
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
+                                    <ViewCell.ContextActions>
+                <MenuItem Text="Delete" IsDestructive="True" Clicked="Handle_Clicked_1" CommandParameter="{Binding Id}" />
+            </ViewCell.ContextActions>
                         <StackLayout Padding="10">
                             <!--<Label Text="{Binding  Id}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />-->
                             <Label Text="{Binding Type}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />

@@ -1,8 +1,10 @@
 ﻿using System;
+using Newtonsoft.Json;
 namespace ProjektXamarin.Models
 {
     public class Insurance
     {
+        [JsonProperty(PropertyName = "id")]
         public string Id { get; set; }
         public string Type { get; set; }
         public int Prize { get; set; }

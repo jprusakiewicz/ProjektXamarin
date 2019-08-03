@@ -38,5 +38,14 @@ namespace ProjektXamarin.Views
             if (viewModel.Items.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
         }
+
+        async void Handle_Clicked_1(object sender, System.EventArgs e)
+        {
+            var item = (MenuItem)sender;
+            string id = item.CommandParameter.ToString();
+            Console.WriteLine(id);
+            await viewModel.DataStore.DeleteItemAsync(id);
+            viewModel.LoadItemsCommand.Execute(null);
+        }
     }
 }

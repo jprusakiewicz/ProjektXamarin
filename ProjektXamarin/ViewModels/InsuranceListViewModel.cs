@@ -12,6 +12,7 @@ namespace ProjektXamarin.ViewModels
     {
         public ObservableCollection<Insurance> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
+        public Command DeleteItemCommand { get; set; }
         public Customer customer;
         public InsuranceListViewModel()
         {
@@ -24,7 +25,7 @@ namespace ProjektXamarin.ViewModels
                 Items.Add(newItem);
                 await DataStore.AddItemAsync(newItem);
             });
-            MessagingCenter.Subscribe<ProfilePageModel, Customer>(this, "ProfileUpdated", async (obj, _cus)=>
+            MessagingCenter.Subscribe<ProfilePageModel, Customer>(this, "ProfileUpdated", (obj, _cus)=>
             {
                 customer = _cus;
             });
