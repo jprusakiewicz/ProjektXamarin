@@ -16,7 +16,7 @@ namespace ProjektXamarin.ViewModels
         public Customer customer;
         public InsuranceListViewModel()
         {
-            // Title = "Browse";
+            // Title = "Your insurance list";
             Items = new ObservableCollection<Insurance>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
             MessagingCenter.Subscribe<NewInsurancePage, Insurance>(this, "AddItem", async (obj, item) =>

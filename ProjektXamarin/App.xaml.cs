@@ -1,4 +1,5 @@
 ﻿using System;
+using ProjektXamarin.Services;
 using ProjektXamarin.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -10,7 +11,6 @@ namespace ProjektXamarin
         public App()
         {
             InitializeComponent();
-
             MainPage = new MainPage();
         }
 

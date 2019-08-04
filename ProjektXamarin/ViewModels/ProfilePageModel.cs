@@ -7,18 +7,22 @@ namespace ProjektXamarin.ViewModels
 {
     public class ProfilePageModel : ViewModelBase
     {
+        CustomerServices service;
         public ProfilePageModel()
         {
-            var service = new CustomerServices();
+            service = new CustomerServices();
             Customer = service.GetCustomer();
-
         }
 
         private Customer _customer;
         public Customer Customer
         {
             get { return _customer; }
-            set { SetProperty(ref _customer, value); }
+            set
+            {
+                SetProperty(ref _customer, value);
+                service.SetCustomer(Customer);
+            }
         }
 
 

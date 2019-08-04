@@ -1,10 +1,13 @@
 ﻿using System;
+using Newtonsoft.Json;
 using Xamarin.Forms;
 
 namespace ProjektXamarin.Models
 {
     public class Customer
     {
+        [JsonProperty(PropertyName = "id")]
+        public string Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         //public enum Education { none, a, b, c } {get; set;}

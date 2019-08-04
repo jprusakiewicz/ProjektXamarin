@@ -17,7 +17,6 @@ namespace ProjektXamarin.Services
 
 
         private Uri collectionLink = UriFactory.CreateDocumentCollectionUri(databaseId, collectionId);
-
         private DocumentClient client;
 
         List<Insurance> items { get; set; }
