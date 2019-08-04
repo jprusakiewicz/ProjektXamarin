@@ -12,6 +12,7 @@ namespace ProjektXamarin.ViewModels
         {
             service = new CustomerServices();
             Customer = service.GetCustomer();
+            MessagingCenter.Send(this, "ProfileUpdated", Customer);
         }
 
         private Customer _customer;

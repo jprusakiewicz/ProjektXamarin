@@ -30,7 +30,7 @@ namespace ProjektXamarin.Views
         }
         async void Handle_Clicked(object sender, System.EventArgs e)
         {
-            if (viewModel.customer != null)
+            if (viewModel.IsCustomerreplete())
                 await Navigation.PushModalAsync(new NavigationPage(new NewInsurancePage(viewModel.customer)));
             else
                 await DisplayAlert("Profile is empty","Please edit your profile","OK");

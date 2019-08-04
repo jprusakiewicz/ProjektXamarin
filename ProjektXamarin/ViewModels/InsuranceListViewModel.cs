@@ -32,6 +32,19 @@ namespace ProjektXamarin.ViewModels
         
         }
 
+        public bool IsCustomerreplete()
+        {
+            if (
+                customer.Adress != null &&
+                customer.Education != null &&
+                customer.FirstName != null &&
+                customer.LastName != null &&
+                customer.MarialStatus != null
+                )
+                return true;
+            else return false;
+                    
+        }
         async Task ExecuteLoadItemsCommand()
         {
             if (IsBusy)
