@@ -31,7 +31,12 @@ namespace ProjektXamarin.ViewModels
             });
         
         }
-
+        public bool IsCustomerAdult()
+        {
+            if (customer.Age < 18)
+                return false;
+            else return true;
+        }
         public bool IsCustomerreplete()
         {
             if (
@@ -40,6 +45,7 @@ namespace ProjektXamarin.ViewModels
                 customer.FirstName != null &&
                 customer.LastName != null &&
                 customer.MarialStatus != null
+                
                 )
                 return true;
             else return false;

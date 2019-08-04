@@ -30,8 +30,10 @@ namespace ProjektXamarin.Views
         }
         async void Handle_Clicked(object sender, System.EventArgs e)
         {
-            if (viewModel.IsCustomerreplete())
+            if (viewModel.IsCustomerreplete() && viewModel.IsCustomerAdult())
                 await Navigation.PushModalAsync(new NavigationPage(new NewInsurancePage(viewModel.customer)));
+            else if (!viewModel.IsCustomerAdult())
+                await DisplayAlert("You are underage", "You have to be at least 18 to buy insurance", "OK");
             else
                 await DisplayAlert("Profile is empty","Please edit your profile","OK");
         }
