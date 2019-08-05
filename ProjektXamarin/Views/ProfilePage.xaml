@@ -3,6 +3,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Edit" Clicked="EditProfile_Clicked" />
     </ContentPage.ToolbarItems>
+    <ScrollView>
     <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
         <Image Margin="0,0,0,10" x:Name="imgSelected" HeightRequest="150" Source="{Binding Customer.ProfilePhoto}"> </Image>
         <Label Text="First Name:"/>
@@ -18,4 +19,5 @@
         <Label Text="Adress:"/>
         <Label Text="{Binding Customer.Adress}"/>
     </StackLayout>
+    </ScrollView>
 </ContentPage>

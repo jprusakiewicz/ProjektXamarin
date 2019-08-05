@@ -5,6 +5,7 @@
         <ToolbarItem Text="Save" Clicked="Save_Clicked" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout Spacing="20" Padding="15">
             <Label Text="ID" FontSize="Medium" />
             <Label Text="{Binding Item.Id}" FontSize="Small" />
@@ -75,5 +76,6 @@
             </StackLayout>
             
         </StackLayout>
+       </ScrollView>
     </ContentPage.Content>
 </ContentPage>
