@@ -136,5 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\DefaultPortrait.png" />
+    <BundleResource Include="Resources\user.png" />
+    <BundleResource Include="Resources\file.png" />
   </ItemGroup>
 </Project>

@@ -1,5 +1,6 @@
 ﻿using System;
 using Newtonsoft.Json;
+using Plugin.Media.Abstractions;
 using Xamarin.Forms;
 
 namespace ProjektXamarin.Models
@@ -15,6 +16,7 @@ namespace ProjektXamarin.Models
         public string Education { get; set; }
         public string MarialStatus { get; set; }
         public string Adress { get; set; }
+        [JsonIgnore]
         public ImageSource ProfilePhoto { get; set; }
 
     }

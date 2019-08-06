@@ -71,9 +71,10 @@ namespace ProjektXamarin.Services
                     Education = null,
                     MarialStatus = null,
                     Adress = null,
-                    // ProfilePhoto = "DefaultPortrait.png"
+                    ProfilePhoto = "DefaultPortrait.png"
                 };
             }
+            Cus.ProfilePhoto = "DefaultPortrait.png";
             return Cus;
         }
         public async void SetCustomer(Customer _cus)

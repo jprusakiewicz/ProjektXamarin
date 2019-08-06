@@ -32,10 +32,12 @@ namespace ProjektXamarin.Views
         {
             if (viewModel.IsCustomerreplete() && viewModel.IsCustomerAdult())
                 await Navigation.PushModalAsync(new NavigationPage(new NewInsurancePage(viewModel.customer)));
+            else if (!viewModel.IsCustomerreplete())
+                await DisplayAlert("Profile is empty", "Please edit your profile", "OK");
             else if (!viewModel.IsCustomerAdult())
                 await DisplayAlert("You are underage", "You have to be at least 18 to buy insurance", "OK");
             else
-                await DisplayAlert("Profile is empty","Please edit your profile","OK");
+                await DisplayAlert("Somethings broken", "Please contact with developer", "OK");
         }
         protected override void OnAppearing()
         {
