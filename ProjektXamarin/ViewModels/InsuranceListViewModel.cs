@@ -27,7 +27,7 @@ namespace ProjektXamarin.ViewModels
             });
             MessagingCenter.Subscribe<ProfilePageModel, Customer>(this, "ProfileUpdated", (obj, _cus)=>
             {
-                customer = _cus; //todo -> get from service
+                customer = _cus;
             });
         
         }

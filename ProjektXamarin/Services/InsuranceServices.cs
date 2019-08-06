@@ -25,20 +25,11 @@ namespace ProjektXamarin.Services
             client = new DocumentClient(new System.Uri(accountURL), accountKey);
             items = new List<Insurance>();
 
-            //var mockItems = new List<Insurance>
-            //{
-            //    new Insurance { Id = Guid.NewGuid().ToString(), Prize =  0, Type = "DEMO", Duration = 999 },
-            //};
-            //foreach (var item in mockItems)
-            //{
-            //    items.Add(item);
-            //}
         }
       
         public async Task<bool> AddItemAsync(Insurance item)
         {
             await client.CreateDocumentAsync(collectionLink, item);
-            //items.Add(item); //refresh insted
             await SynthAsync();
 
             return await Task.FromResult(true);
@@ -48,9 +39,7 @@ namespace ProjektXamarin.Services
             try
             {
                 items.Clear();
-                // The query excludes completed TodoItems
                 var query = client.CreateDocumentQuery<Insurance>(collectionLink, new FeedOptions { MaxItemCount = -1 })
-                 //     .Where(todoItem => todoItem.Complete == false)
                       .AsDocumentQuery();
 
                 while (query.HasMoreResults)
@@ -66,14 +55,6 @@ namespace ProjektXamarin.Services
             }
         }
 
-        //public async Task<bool> UpdateItemAsync(Insurance item)
-        //{
-        //    var oldItem = items.Where((Insurance arg) => arg.Id == item.Id).FirstOrDefault();
-        //    items.Remove(oldItem);
-        //    items.Add(item);
-
-        //    return await Task.FromResult(true);
-        //}
 
         public async Task<bool> DeleteItemAsync(string id)
         {

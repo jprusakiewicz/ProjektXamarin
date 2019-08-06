@@ -1,5 +1,4 @@
-﻿using System;
-using ProjektXamarin.Models;
+﻿using ProjektXamarin.Models;
 
 namespace ProjektXamarin.Services
 {

@@ -12,8 +12,7 @@ namespace ProjektXamarin.ViewModels
             Content = new StackLayout
             {
                 Children = {
-                    new Label { Text = "Your Insurance", BindingContext = item }
-                    
+                    new Label { Text = "Your Insurance", BindingContext = item }        
                 }
             };
         }
